@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Calendar frame with UniBo bordeaux color - più grande -->
+  <rect x="26" y="26" width="460" height="460" rx="42" fill="#ac3931"/>
+  
+  <!-- Calendar content in white -->
+  <rect x="54" y="54" width="404" height="404" rx="32" fill="white"/>
+  
+  <!-- Calendar header in red -->
+  <rect x="54" y="54" width="404" height="102" rx="32" fill="#d32f2f"/>
+  
+  <!-- Calendar grid -->
+  <line x1="189" y1="182" x2="189" y2="432" stroke="#ac3931" stroke-width="13"/>
+  <line x1="323" y1="182" x2="323" y2="432" stroke="#ac3931" stroke-width="13"/>
+  
+  <line x1="74" y1="267" x2="438" y2="267" stroke="#ac3931" stroke-width="13"/>
+  <line x1="74" y1="350" x2="438" y2="350" stroke="#ac3931" stroke-width="13"/>
+  
+  <!-- Event dots in blue - più grandi -->
+  <circle cx="128" cy="220" r="21" fill="#1976d2"/>
+  <circle cx="323" cy="308" r="21" fill="#1976d2"/>
+  <circle cx="387" cy="392" r="21" fill="#1976d2"/>
+</svg>
