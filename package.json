@@ -21,14 +21,15 @@
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
+"scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "client": "react-scripts start",
     "server": "cd server && npm start",
     "dev": "npm start",
     "build": "react-scripts build",
-    "test": "cross-env NODE_NO_WARNINGS=1 react-scripts test",
-    "test:all": "cross-env NODE_NO_WARNINGS=1 react-scripts test --watchAll=false",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
     "eject": "react-scripts eject"
   },
   "engines": {
