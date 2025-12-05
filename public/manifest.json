@@ -1,0 +1,28 @@
+{
+  "short_name": "UniBo Calendar",
+  "name": "UniBo Smart Calendar",
+  "description": "Calendario intelligente per studenti dell'Università di Bologna con rilevamento conflitti e statistiche",
+  "icons": [
+    {
+      "src": "logo-full.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "logo full 192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo full 512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ac3931",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["education", "productivity"]
+}
