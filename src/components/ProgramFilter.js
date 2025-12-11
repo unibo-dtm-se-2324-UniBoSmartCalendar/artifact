@@ -115,7 +115,7 @@ const ProgramFilter = ({
     });
     
     return groups;
-  }, [events]);
+  }, [events, formatProgramName]);
 
   // Initialize program filters and add new programs automatically
   useEffect(() => {
