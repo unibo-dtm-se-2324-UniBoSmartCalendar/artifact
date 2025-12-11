@@ -68,4 +68,4 @@ export const getConflictingEvents = (event, allEvents) => {
     if (event === otherEvent) return false;
     return eventsOverlap(event, otherEvent);
   });
-};S
+};
