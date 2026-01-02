@@ -75,7 +75,8 @@ The interface uses a card system to summarize the main data:
 
 ![UI Screenshot](./imgs/ui-1.jpeg) <br>
 ![UI Screenshot](./imgs/ui-2.jpeg) <br>
-![Project Folder](./imgs/project-folder.jpeg)
+![Project Folder](./imgs/project-folder.jpeg) <br>
+![Server Run](./imgs/terminal.png)
  
 ## License 
 
