@@ -19,9 +19,9 @@ It was chosen for this project because:
 
 ## Project Strcture
 
-artifact/
-├── src/
-│    ├── components/     
+artifact/  
+├── src/ <br>
+│    ├── components/ <br>
 │    ├── pages/           
 │    ├── assets/          
 │    ├── App.jsx           
@@ -73,9 +73,9 @@ The interface uses a card system to summarize the main data:
 - Distribution Analysis: A larger card analyzes the “Busiest Day” and the “Most Frequent Time Slot.” Currently, the data is zero or “N/A,” indicating an empty state.
 - Courses by Year: A section dedicated to dividing the study load according to the academic year.
 
-![UI Screenshot](https://ibb.co/23M5jG7S)
-![UI Screenshot](https://ibb.co/FqDFbmM9)
-![Project Folder](https://ibb.co/gFff481f)
+![UI Screenshot](./imgs/ui-1.jpeg) <br>
+![UI Screenshot](./imgs/ui-2.jpeg) <br>
+![Project Folder](./imgs/project-folder.jpeg)
  
 ## License 
 
