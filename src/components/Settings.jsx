@@ -14,7 +14,7 @@ import {
   Alert
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import CourseSelector from './CourseSelector';
+import CourseSelector from './CourseSelector.jsx';
 import AddIcon from '@mui/icons-material/Add';
 
 const Settings = () => {

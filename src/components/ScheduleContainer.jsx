@@ -7,11 +7,11 @@ import IosShareIcon from '@mui/icons-material/IosShare';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { downloadICSFile } from '../services/calendar';
 import { getApiBaseUrl, getCalendarProfilePayload, syncCalendarProfile } from '../services/api';
-import CalendarView from './CalendarView';
-import CardList from './CardList';
-import ProgramFilter from './ProgramFilter';
-import StatisticsDashboard from './StatisticsDashboard';
-import NotificationManager from './NotificationManager';
+import CalendarView from './CalendarView.jsx';
+import CardList from './CardList.jsx';
+import ProgramFilter from './ProgramFilter.jsx';
+import StatisticsDashboard from './StatisticsDashboard.jsx';
+import NotificationManager from './NotificationManager.jsx';
 import { formatDistanceToNow } from 'date-fns';
 
 function TabPanel(props) {

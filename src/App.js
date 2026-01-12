@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation, Outlet } fro
 import SettingsIcon from '@mui/icons-material/Settings';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ScheduleContainer from './components/ScheduleContainer';
-import Settings from './components/Settings';
+import Settings from './components/Settings.jsx';
 import { fetchSchedule } from './services/api';
 import './App.css';
 

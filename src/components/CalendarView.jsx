@@ -19,7 +19,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './CalendarCustom.css';
-import EventList from './EventList';
+import EventList from './EventList.jsx';
 import { formatEventTitle, createCalendarEvent } from '../utils/eventUtils';
 import { findConflicts } from '../utils/conflictUtils';
 

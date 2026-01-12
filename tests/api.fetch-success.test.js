@@ -1,5 +1,13 @@
 import axios from "axios";
+import { vi } from "vitest";
 import { fetchSchedule } from "../src/services/api";
+
+vi.mock("axios", () => ({
+  default: {
+    get: vi.fn(),
+    post: vi.fn()
+  }
+}));
 
 describe("fetchSchedule - success path", () => {
   const timetableEntry = {
@@ -13,6 +21,7 @@ describe("fetchSchedule - success path", () => {
 
   afterEach(() => {
     window.localStorage.clear();
+    vi.clearAllMocks();
   });
 
   test("aggregates multi-year events and converts date fields", async () => {

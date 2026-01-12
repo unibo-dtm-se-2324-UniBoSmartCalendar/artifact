@@ -11,8 +11,8 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SchoolIcon from '@mui/icons-material/School';
-import CourseFilter from './CourseFilter';
-import YearFilter from './YearFilter';
+import CourseFilter from './CourseFilter.jsx';
+import YearFilter from './YearFilter.jsx';
 
 const ProgramFilter = ({ 
   events, 

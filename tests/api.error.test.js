@@ -5,7 +5,15 @@
  * - Verifica che fetchSchedule NON lanci ma gestisca l'errore internamente (e ritorni un array)
  */
 import axios from "axios";
+import { vi } from "vitest";
 import { fetchSchedule } from "../src/services/api";
+
+vi.mock("axios", () => ({
+  default: {
+    get: vi.fn(),
+    post: vi.fn()
+  }
+}));
 
 beforeEach(() => {
   // Simula una configurazione minima in localStorage
@@ -16,7 +24,7 @@ beforeEach(() => {
 
 afterEach(() => {
   window.localStorage.clear();
-  jest.clearAllMocks();
+  vi.clearAllMocks();
 });
 
 test("fetchSchedule: quando axios.get fallisce, ritorna comunque un array (vuoto)", async () => {
