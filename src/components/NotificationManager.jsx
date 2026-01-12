@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Dialog,
   DialogTitle,
@@ -19,9 +19,7 @@ import {
 } from '@mui/material';
 import {
   Notifications as NotificationsIcon,
-  NotificationsOff as NotificationsOffIcon,
-  Delete as DeleteIcon,
-  Add as AddIcon
+  NotificationsOff as NotificationsOffIcon
 } from '@mui/icons-material';
 
 const NotificationManager = ({ events, ariaLabel = 'Notifications & reminders' }) => {
@@ -30,8 +28,26 @@ const NotificationManager = ({ events, ariaLabel = 'Notifications & reminders' }
   const [notify15min, setNotify15min] = useState(true);
   const [notify5min, setNotify5min] = useState(true);
   const [permission, setPermission] = useState('default');
-  const [reminders, setReminders] = useState([]);
   const [nextLesson, setNextLesson] = useState(null);
+
+  const checkUpcomingLessons = useCallback(() => {
+    if (!notificationsEnabled || permission !== 'granted') return;
+
+    const now = new Date();
+    events.forEach(event => {
+      const eventStart = new Date(event.start);
+      const minutesUntilStart = (eventStart - now) / 1000 / 60;
+
+      // Notify 15 minutes before (if enabled)
+      if (notify15min && minutesUntilStart > 14 && minutesUntilStart <= 15) {
+        showNotification(event, 15);
+      }
+      // Notify 5 minutes before (if enabled)
+      else if (notify5min && minutesUntilStart > 4 && minutesUntilStart <= 5) {
+        showNotification(event, 5);
+      }
+    });
+  }, [events, notify15min, notify5min, notificationsEnabled, permission]);
 
   useEffect(() => {
     // Check notification permission
@@ -54,11 +70,6 @@ const NotificationManager = ({ events, ariaLabel = 'Notifications & reminders' }
     if (saved5 !== null) {
       setNotify5min(saved5 === 'true');
     }
-
-    const savedReminders = localStorage.getItem('customReminders');
-    if (savedReminders) {
-      setReminders(JSON.parse(savedReminders));
-    }
   }, []);
 
   useEffect(() => {
@@ -80,26 +91,7 @@ const NotificationManager = ({ events, ariaLabel = 'Notifications & reminders' }
     }, 60000); // Check every minute
 
     return () => clearInterval(interval);
-  }, [notificationsEnabled, events]);
-
-  const checkUpcomingLessons = () => {
-    if (!notificationsEnabled || permission !== 'granted') return;
-
-    const now = new Date();
-    events.forEach(event => {
-      const eventStart = new Date(event.start);
-      const minutesUntilStart = (eventStart - now) / 1000 / 60;
-
-      // Notify 15 minutes before (if enabled)
-      if (notify15min && minutesUntilStart > 14 && minutesUntilStart <= 15) {
-        showNotification(event, 15);
-      }
-      // Notify 5 minutes before (if enabled)
-      else if (notify5min && minutesUntilStart > 4 && minutesUntilStart <= 5) {
-        showNotification(event, 5);
-      }
-    });
-  };
+  }, [checkUpcomingLessons, events, notificationsEnabled]);
 
   const showNotification = (event, minutes) => {
     const location = event.aule?.length > 0 

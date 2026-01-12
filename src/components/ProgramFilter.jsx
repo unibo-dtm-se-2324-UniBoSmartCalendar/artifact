@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import {
   Box,
   Paper,
@@ -24,16 +24,16 @@ const ProgramFilter = ({
   const [expandedCourseFilters, setExpandedCourseFilters] = useState({});
 
   // Get base program name for filter keys (without year/code)
-  const getBaseProgramName = (programName) => {
+  const getBaseProgramName = useCallback((programName) => {
     if (!programName) return '';
     // Just extract the base name before " - Year" or " - " 
     // Keep it exactly as it comes, no formatting
     const parts = programName.split(' - ');
     return parts[0];
-  };
+  }, []);
   
   // Format program name for display (with year if available)
-  const formatProgramName = (programName) => {
+  const formatProgramName = useCallback((programName) => {
     console.log('Original program name:', programName);
     if (!programName) return '';
     
@@ -44,7 +44,7 @@ const ProgramFilter = ({
     const result = year ? `${name} - ${year}` : name;
     console.log('Formatted program name:', result);
     return result;
-  };
+  }, [getBaseProgramName]);
 
   // Group events by program
   const programGroups = useMemo(() => {
