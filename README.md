@@ -14,7 +14,7 @@
 | **User Interface** | **Quality Assurance** |
 |:---:|:---:|
 | ![UI Preview](docs/images/ui-preview.png) | ![Test Output](docs/images/test-output.png) |
-| *Dashboard interattiva con gestione conflitti* | *Test Suite automatizzata con Vitest* |
+| *Interactive dashboard with conflict* | *Automated Test Suite with Vitest* |
 
 ---
 
@@ -26,6 +26,7 @@
 * **Smart Parsing:** Backend engine that normalizes raw data coming from university servers.
 * **Local Caching:** Intelligent caching system to ensure instant access even when offline
 * **Cross-Platform Export:** Native compatibility with Google Calendar, Outlook, and Apple Calendar.
+* **Calendar subscription:** Doing the subscription, you can copy the URL of the calendar and paste in Outlook, Apple calendar and Google calendar
 
 ---
 
