@@ -8,7 +8,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { downloadICSFile } from '../services/calendar';
 import { getApiBaseUrl, getCalendarProfilePayload, syncCalendarProfile } from '../services/api';
 import CalendarView from './CalendarView.jsx';
-import CardList from './CardList.jsx';
+import EventList from './EventList.jsx';
 import ProgramFilter from './ProgramFilter.jsx';
 import StatisticsDashboard from './StatisticsDashboard.jsx';
 import NotificationManager from './NotificationManager.jsx';
@@ -368,7 +368,7 @@ const ScheduleContainer = ({ events }) => {
       </TabPanel>
 
       <TabPanel value={currentTab} index={1}>
-        <CardList events={filteredEvents} />
+        <EventList events={filteredEvents} />
       </TabPanel>
     </Box>
   );
