@@ -346,3 +346,12 @@ app.post('/api/profile', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
+
+//  Start and Export functions
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Calendar server running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
