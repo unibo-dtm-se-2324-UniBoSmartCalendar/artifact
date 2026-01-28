@@ -26,6 +26,7 @@
     "client": "react-scripts start",
     "server": "cd server && npm start",
     "dev": "npm start",
+    "postinstall": "cd server && npm install",
     "build": "react-scripts build",
     "test": "vitest run",
     "test:watch": "vitest",
