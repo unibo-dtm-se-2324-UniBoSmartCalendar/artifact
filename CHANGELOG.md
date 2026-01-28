@@ -5,8 +5,8 @@ Versioning: SemVer.
 
 ---
 
-## [Unreleased]
-- N/A
+## [1.0.0] - 2026-01-28 — First Complete Release ✅
+- First complete release including all previous fixes and features.
 
 ---
 
